@@ -14,10 +14,10 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 12% 0%, rgba(127,179,218,0.26), transparent 22%),
-    radial-gradient(circle at 84% 14%, rgba(11,95,165,0.14), transparent 28%),
-    radial-gradient(circle at 52% 100%, rgba(255,255,255,0.9), transparent 28%),
-    #f5fbff;
+    radial-gradient(circle at 10% 0%, rgba(127,179,218,0.25), transparent 20%),
+    radial-gradient(circle at 82% 10%, rgba(11,95,165,0.12), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(255,255,255,0.82), transparent 28%),
+    #f4fbff;
   color: #0b2f52;
   font-family: 'Satoshi', system-ui, sans-serif;
 }
@@ -29,11 +29,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 180ms ease, transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
-}
-
-a:hover {
-  color: inherit;
 }
 
 ::selection {
@@ -50,7 +45,7 @@ a:hover {
 }
 
 .text-grid {
-  text-shadow: 0 0 24px rgba(127,179,218,0.18);
+  text-shadow: 0 0 24px rgba(127,179,218,0.14);
 }
 
 .nautical-grid {
@@ -58,36 +53,80 @@ a:hover {
     linear-gradient(rgba(11,47,82,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(11,47,82,0.04) 1px, transparent 1px);
   background-size: 42px 42px;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 92%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.92), transparent 92%);
 }
 
 .water-orb {
-  filter: blur(92px);
+  filter: blur(96px);
 }
 
-.card-lift {
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, background-color 240ms ease;
+.water-ripple {
+  background:
+    radial-gradient(circle at 25% 30%, rgba(127,179,218,0.28), transparent 22%),
+    radial-gradient(circle at 78% 62%, rgba(11,95,165,0.14), transparent 18%),
+    linear-gradient(180deg, rgba(255,255,255,0.0), rgba(255,255,255,0.35));
+  animation: drift 12s ease-in-out infinite alternate;
 }
 
-.card-lift:hover {
-  transform: translateY(-4px);
+.reveal-up {
+  animation: rise 900ms ease both;
 }
 
-.card-lift:focus-within {
-  transform: translateY(-4px);
+.interactive-card {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, background-color 240ms ease, filter 240ms ease;
 }
 
-.Button,
+.interactive-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 26px 80px rgba(34,81,120,0.16),
+    0 0 0 1px rgba(11,95,165,0.10) inset,
+    0 0 40px rgba(127,179,218,0.12);
+}
+
+.interactive-card:focus-within {
+  transform: translateY(-6px);
+}
+
+.interactive-card a,
+.interactive-card button,
 button,
 [role='button'] {
-  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease, filter 180ms ease;
+}
+
+.interactive-card:hover a,
+.interactive-card:hover button,
+a:hover button,
+button:hover,
+[role='button']:hover {
+  filter: saturate(1.05);
 }
 
 .shadow-glass {
   box-shadow:
-    0 16px 60px rgba(35,84,126,0.12),
-    0 0 0 1px rgba(255,255,255,0.65) inset;
+    0 16px 50px rgba(34,81,120,0.12),
+    0 0 0 1px rgba(255,255,255,0.55) inset;
 }
 
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(-1.5%, -1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1.5%, 1%, 0) scale(1.04);
+  }
+}
