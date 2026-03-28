@@ -127,7 +127,7 @@ function GlassPanel({ children, className = '' }: { children: React.ReactNode; c
 
 export default function Page() {
   return (
-    <main className="relative overflow-hidden bg-[#f6fbff] text-[#0a2f4f]">
+    <main className="relative overflow-hidden bg-transparent text-[#0a2f4f]">
       <div className="pointer-events-none absolute inset-0 marine-grid opacity-55" />
       <div className="pointer-events-none absolute left-[-10%] top-[-8%] h-[30rem] w-[30rem] rounded-full bg-[rgba(0,169,206,0.2)] blur-3xl" />
       <div className="pointer-events-none absolute right-[-12%] top-[10%] h-[34rem] w-[34rem] rounded-full bg-[rgba(255,205,0,0.18)] blur-3xl" />
