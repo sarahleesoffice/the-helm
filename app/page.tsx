@@ -154,7 +154,7 @@ export default function Page() {
         <div className="overflow-hidden rounded-full border border-[rgba(0,169,206,0.12)] bg-white/88 py-3 shadow-[0_16px_45px_rgba(10,47,79,0.06)] backdrop-blur-xl">
           <div className="flex w-max animate-marquee gap-6 whitespace-nowrap px-6 text-[11px] font-semibold uppercase tracking-[0.42em] text-[#00a9ce] md:text-xs">
             {[...marquee, ...marquee].map((item, index) => (
-              <span key={item + "-" + index} className="flex items-center gap-6">
+              <span key={item + '-' + index} className="flex items-center gap-6">
                 <span>{item}</span>
                 <span className="text-[#ffd23f]">✦</span>
               </span>
@@ -164,68 +164,77 @@ export default function Page() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 pb-16 pt-4 md:px-8 md:pb-24 md:pt-8">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="reveal-up relative z-10">
-            <Badge className="section-badge">Phantom Marine-inspired luxury</Badge>
-            <h1 className="mt-6 max-w-4xl font-display text-[4rem] uppercase leading-[0.84] tracking-[0.03em] text-[#0a2f4f] md:text-[6.9rem] lg:text-[7.8rem]">
-              Your Yacht. Your Terms.
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-9 text-[#4d6a84] md:text-lg">
-              The Helm is now styled like a white-hot marine luxury brand: crisp whites, ocean blues, bright yellow accents, and a premium layout that feels polished, fast, and unmistakably high-end.
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Button href="#fleet" className="hover:scale-[1.03] active:scale-[0.99]">Explore the Fleet</Button>
-              <Button href="#services" variant="outline" className="hover:scale-[1.02]">View Services</Button>
-            </div>
-            <div className="mt-10 grid gap-3 sm:grid-cols-3">
-              {heroMetrics.map(([value, label]) => (
-                <GlassPanel key={label} className="reveal-up">
-                  <div className="text-sm text-[#6d879c]">{label}</div>
-                  <div className="mt-2 font-display text-xl uppercase tracking-[0.06em] text-[#0a2f4f]">{value}</div>
-                </GlassPanel>
-              ))}
-            </div>
-          </div>
+        <div className="relative isolate overflow-hidden rounded-[40px] border border-[rgba(0,169,206,0.12)] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,251,255,0.96))] px-5 py-7 shadow-[0_24px_90px_rgba(10,47,79,0.1)] md:px-7 md:py-8 lg:px-8 lg:py-10">
+          <div className="pointer-events-none absolute inset-0 hero-ocean-splash" />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(246,251,255,0.72)),radial-gradient(circle_at_16%_12%,rgba(255,255,255,0.9),transparent_22%),radial-gradient(circle_at_70%_18%,rgba(255,210,63,0.22),transparent_16%),radial-gradient(circle_at_70%_72%,rgba(0,169,206,0.22),transparent_24%)]" />
+          <div className="pointer-events-none absolute -left-12 top-8 h-40 w-40 rounded-full bg-[rgba(255,255,255,0.42)] blur-3xl" />
+          <div className="pointer-events-none absolute right-[-4%] top-[-6%] h-[24rem] w-[24rem] rounded-full bg-[rgba(0,169,206,0.18)] blur-3xl" />
+          <div className="pointer-events-none absolute bottom-[-10%] left-[28%] h-[22rem] w-[22rem] rounded-full bg-[rgba(255,210,63,0.2)] blur-3xl" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(246,251,255,0.96))]" />
 
-          <div className="reveal-up relative lg:-mt-6">
-            <Card className="interactive-card relative overflow-hidden border border-[rgba(0,169,206,0.14)] bg-white/78 shadow-[0_24px_90px_rgba(10,47,79,0.12)]">
-              <CardContent className="relative p-5 md:p-7">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,169,206,0.2),transparent_40%),radial-gradient(circle_at_bottom,rgba(255,210,63,0.16),transparent_44%)]" />
-                <div className="relative space-y-5">
-                  <div className="flex items-center justify-between">
-                    <div className="text-[10px] uppercase tracking-[0.34em] text-[#6d879c]">Immersive hero</div>
-                    <div className="rounded-full border border-[rgba(255,210,63,0.35)] bg-[rgba(255,210,63,0.12)] px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-[#0a2f4f]">
-                      Full-bleed stage
-                    </div>
-                  </div>
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] border border-[rgba(0,169,206,0.12)] bg-[#eaf8ff] shadow-[0_24px_75px_rgba(10,47,79,0.12)]">
-                    <div className="absolute inset-0 hero-water-stage" />
-                    <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.28),transparent_40%),radial-gradient(circle_at_top,rgba(0,169,206,0.3),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.4),rgba(234,248,255,0.88))]" />
-                    <div className="absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,rgba(255,255,255,0.8),transparent)]" />
-                    <div className="absolute inset-x-6 top-6 rounded-full border border-[rgba(255,255,255,0.62)] bg-white/42 px-4 py-2 text-[10px] uppercase tracking-[0.24em] text-[#00a9ce] backdrop-blur-xl">
-                      High-res water / yacht placeholder
-                    </div>
-                    <div className="absolute left-6 top-1/2 -translate-y-1/2 rounded-[28px] border border-[rgba(255,255,255,0.55)] bg-white/88 p-5 shadow-[0_16px_50px_rgba(10,47,79,0.08)]">
-                      <div className="text-[10px] uppercase tracking-[0.3em] text-[#6d879c]">Featured route</div>
-                      <div className="mt-2 max-w-[13rem] font-display text-3xl uppercase leading-[0.92] tracking-[0.06em] text-[#0a2f4f]">
-                        Blue water, bright light.
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="reveal-up relative z-10">
+              <Badge className="section-badge">Phantom Marine-inspired luxury</Badge>
+              <h1 className="mt-6 max-w-4xl font-display text-[4rem] uppercase leading-[0.84] tracking-[0.03em] text-[#0a2f4f] md:text-[6.9rem] lg:text-[7.8rem]">
+                Your Yacht. Your Terms.
+              </h1>
+              <p className="mt-6 max-w-2xl text-base leading-9 text-[#4d6a84] md:text-lg">
+                The Helm is now styled like a white-hot marine luxury brand: crisp whites, ocean blues, bright yellow accents, and a premium layout that feels polished, fast, and unmistakably high-end.
+              </p>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <Button href="#fleet" className="hover:scale-[1.03] active:scale-[0.99]">Explore the Fleet</Button>
+                <Button href="#services" variant="outline" className="hover:scale-[1.02]">View Services</Button>
+              </div>
+              <div className="mt-10 grid gap-3 sm:grid-cols-3">
+                {heroMetrics.map(([value, label]) => (
+                  <GlassPanel key={label} className="reveal-up">
+                    <div className="text-sm text-[#6d879c]">{label}</div>
+                    <div className="mt-2 font-display text-xl uppercase tracking-[0.06em] text-[#0a2f4f]">{value}</div>
+                  </GlassPanel>
+                ))}
+              </div>
+            </div>
+
+            <div className="reveal-up relative lg:-mt-6">
+              <Card className="interactive-card relative overflow-hidden border border-[rgba(0,169,206,0.14)] bg-white/78 shadow-[0_24px_90px_rgba(10,47,79,0.12)]">
+                <CardContent className="relative p-5 md:p-7">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,169,206,0.2),transparent_40%),radial-gradient(circle_at_bottom,rgba(255,210,63,0.16),transparent_44%)]" />
+                  <div className="relative space-y-5">
+                    <div className="flex items-center justify-between">
+                      <div className="text-[10px] uppercase tracking-[0.34em] text-[#6d879c]">Immersive hero</div>
+                      <div className="rounded-full border border-[rgba(255,210,63,0.35)] bg-[rgba(255,210,63,0.12)] px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-[#0a2f4f]">
+                        Full-bleed stage
                       </div>
                     </div>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="rounded-[28px] border border-[rgba(0,169,206,0.12)] bg-white/92 p-5 shadow-[0_14px_50px_rgba(10,47,79,0.08)]">
-                        <div className="flex items-center justify-between text-sm text-[#355772]">
-                          <span>Marine concierge experience</span>
-                          <span className="text-[#ffd23f]">01</span>
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] border border-[rgba(0,169,206,0.12)] bg-[#eaf8ff] shadow-[0_24px_75px_rgba(10,47,79,0.12)]">
+                      <div className="absolute inset-0 hero-water-stage" />
+                      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.28),transparent_40%),radial-gradient(circle_at_top,rgba(0,169,206,0.3),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.4),rgba(234,248,255,0.88))]" />
+                      <div className="absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,rgba(255,255,255,0.8),transparent)]" />
+                      <div className="absolute inset-x-6 top-6 rounded-full border border-[rgba(255,255,255,0.62)] bg-white/42 px-4 py-2 text-[10px] uppercase tracking-[0.24em] text-[#00a9ce] backdrop-blur-xl">
+                        High-res water / yacht placeholder
+                      </div>
+                      <div className="absolute left-6 top-1/2 -translate-y-1/2 rounded-[28px] border border-[rgba(255,255,255,0.55)] bg-white/88 p-5 shadow-[0_16px_50px_rgba(10,47,79,0.08)]">
+                        <div className="text-[10px] uppercase tracking-[0.3em] text-[#6d879c]">Featured route</div>
+                        <div className="mt-2 max-w-[13rem] font-display text-3xl uppercase leading-[0.92] tracking-[0.06em] text-[#0a2f4f]">
+                          Blue water, bright light.
                         </div>
-                        <div className="mt-3 h-2 rounded-full bg-[#e4f2fb]">
-                          <div className="h-2 w-[82%] rounded-full bg-[linear-gradient(90deg,#00a9ce,#0a2f4f)] shadow-[0_0_24px_rgba(0,169,206,0.28)]" />
+                      </div>
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <div className="rounded-[28px] border border-[rgba(0,169,206,0.12)] bg-white/92 p-5 shadow-[0_14px_50px_rgba(10,47,79,0.08)]">
+                          <div className="flex items-center justify-between text-sm text-[#355772]">
+                            <span>Marine concierge experience</span>
+                            <span className="text-[#ffd23f]">01</span>
+                          </div>
+                          <div className="mt-3 h-2 rounded-full bg-[#e4f2fb]">
+                            <div className="h-2 w-[82%] rounded-full bg-[linear-gradient(90deg,#00a9ce,#0a2f4f)] shadow-[0_0_24px_rgba(0,169,206,0.28)]" />
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
