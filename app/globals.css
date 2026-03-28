@@ -14,11 +14,11 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 10% 0%, rgba(127,179,218,0.25), transparent 20%),
-    radial-gradient(circle at 82% 10%, rgba(11,95,165,0.12), transparent 24%),
-    radial-gradient(circle at 50% 100%, rgba(255,255,255,0.82), transparent 28%),
-    #f4fbff;
-  color: #0b2f52;
+    radial-gradient(circle at 10% 0%, rgba(0,169,206,0.24), transparent 20%),
+    radial-gradient(circle at 84% 10%, rgba(10,49,83,0.12), transparent 25%),
+    radial-gradient(circle at 50% 100%, rgba(255,255,255,0.86), transparent 28%),
+    #f7fcff;
+  color: #0a3153;
   font-family: 'Satoshi', system-ui, sans-serif;
 }
 
@@ -32,8 +32,8 @@ a {
 }
 
 ::selection {
-  background: rgba(11,95,165,0.22);
-  color: #0b2f52;
+  background: rgba(0,169,206,0.22);
+  color: #0a3153;
 }
 
 .font-display {
@@ -44,34 +44,34 @@ a {
   font-family: 'Satoshi', sans-serif;
 }
 
-.text-grid {
-  text-shadow: 0 0 24px rgba(127,179,218,0.14);
-}
-
-.nautical-grid {
+.bahama-grid {
   background-image:
-    linear-gradient(rgba(11,47,82,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11,47,82,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(10,49,83,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,49,83,0.04) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: linear-gradient(to bottom, rgba(0,0,0,0.92), transparent 92%);
 }
 
-.water-orb {
+.tropical-orb {
   filter: blur(96px);
 }
 
-.water-ripple {
+.hero-water-stage {
   background:
-    radial-gradient(circle at 25% 30%, rgba(127,179,218,0.28), transparent 22%),
-    radial-gradient(circle at 78% 62%, rgba(11,95,165,0.14), transparent 18%),
-    linear-gradient(180deg, rgba(255,255,255,0.0), rgba(255,255,255,0.35));
-  animation: drift 12s ease-in-out infinite alternate;
+    radial-gradient(circle at 20% 20%, rgba(0,169,206,0.35), transparent 26%),
+    radial-gradient(circle at 75% 28%, rgba(127,179,218,0.28), transparent 22%),
+    radial-gradient(circle at 40% 78%, rgba(10,49,83,0.2), transparent 28%),
+    linear-gradient(180deg, rgba(255,255,255,0.45), rgba(0,169,206,0.12)),
+    linear-gradient(135deg, rgba(0,169,206,0.35), rgba(255,255,255,0.05));
+  background-size: 180% 180%;
+  animation: seaShift 14s ease-in-out infinite alternate;
 }
 
 .reveal-up {
   animation: rise 900ms ease both;
 }
 
+.glass-panel,
 .interactive-card {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -81,9 +81,9 @@ a {
 .interactive-card:hover {
   transform: translateY(-6px);
   box-shadow:
-    0 26px 80px rgba(34,81,120,0.16),
-    0 0 0 1px rgba(11,95,165,0.10) inset,
-    0 0 40px rgba(127,179,218,0.12);
+    0 28px 80px rgba(18,83,120,0.16),
+    0 0 0 1px rgba(0,169,206,0.14) inset,
+    0 0 40px rgba(0,169,206,0.14);
 }
 
 .interactive-card:focus-within {
@@ -97,18 +97,10 @@ button,
   transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease, filter 180ms ease;
 }
 
-.interactive-card:hover a,
-.interactive-card:hover button,
-a:hover button,
 button:hover,
-[role='button']:hover {
-  filter: saturate(1.05);
-}
-
-.shadow-glass {
-  box-shadow:
-    0 16px 50px rgba(34,81,120,0.12),
-    0 0 0 1px rgba(255,255,255,0.55) inset;
+[role='button']:hover,
+a:hover button {
+  filter: saturate(1.04);
 }
 
 @keyframes rise {
@@ -122,11 +114,11 @@ button:hover,
   }
 }
 
-@keyframes drift {
+@keyframes seaShift {
   from {
-    transform: translate3d(-1.5%, -1%, 0) scale(1);
+    transform: translate3d(-1.2%, -0.8%, 0) scale(1);
   }
   to {
-    transform: translate3d(1.5%, 1%, 0) scale(1.04);
+    transform: translate3d(1.2%, 0.8%, 0) scale(1.05);
   }
 }
