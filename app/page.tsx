@@ -171,14 +171,15 @@ export default function Page() {
           <div className="pointer-events-none absolute right-[-4%] top-[-6%] h-[24rem] w-[24rem] rounded-full bg-[rgba(0,169,206,0.18)] blur-3xl" />
           <div className="pointer-events-none absolute bottom-[-10%] left-[28%] h-[22rem] w-[22rem] rounded-full bg-[rgba(255,210,63,0.2)] blur-3xl" />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(246,251,255,0.96))]" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-[60%] bg-[linear-gradient(90deg,rgba(6,28,49,0.7),rgba(6,28,49,0.28),transparent)]" />
 
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div className="reveal-up relative z-10">
+            <div className="reveal-up relative z-10 max-w-3xl rounded-[36px] border border-[rgba(255,255,255,0.12)] bg-[rgba(6,28,49,0.18)] p-6 backdrop-blur-md md:p-8">
               <Badge className="section-badge">Phantom Marine-inspired luxury</Badge>
-              <h1 className="mt-6 max-w-4xl font-display text-[4rem] uppercase leading-[0.84] tracking-[0.03em] text-[#0a2f4f] md:text-[6.9rem] lg:text-[7.8rem]">
+              <h1 className="mt-6 max-w-4xl font-display text-[4rem] uppercase leading-[0.84] tracking-[0.03em] text-white drop-shadow-[0_10px_30px_rgba(6,28,49,0.55)] md:text-[6.9rem] lg:text-[7.8rem]">
                 Your Yacht. Your Terms.
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-9 text-[#4d6a84] md:text-lg">
+              <p className="mt-6 max-w-2xl text-base leading-9 text-white/86 drop-shadow-[0_4px_20px_rgba(6,28,49,0.45)] md:text-lg">
                 The Helm is now styled like a white-hot marine luxury brand: crisp whites, ocean blues, bright yellow accents, and a premium layout that feels polished, fast, and unmistakably high-end.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
